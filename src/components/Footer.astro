@@ -1,0 +1,45 @@
+---
+import Social from './Social.astro';
+const {domain} = Astro.props;
+---
+
+
+<footer>
+  <Social platform="github" username="n-amsomn" />
+  <Social platform="youtube" username="@SergheiPaparashova" />
+  <Social platform="linkedin" username="@SergheiPaparashova" />
+  <section class="domain">
+    {domain}
+    <span class="time"></span>
+  </section>
+</footer>
+
+<style>
+  footer {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    background: #13A10E;
+    display: flex;
+    color: #0C0C0C
+  }
+  .domain {
+    margin-left: auto;
+  }
+
+  @media screen and (max-width: 540px) {
+    .domain {
+      content-visibility: hidden;
+    }
+}
+
+  @media screen and (min-width: 540px) and (max-width: 780px) {
+    
+  }
+</style>
+
+<script type="text/javascript">
+  let currentDate = `${new Date().toJSON().slice(11, 16)} ${new Date().toJSON().slice(0, 10)}`
+  document.getElementsByClassName("time").innerHTML = (currentDate); 
+</script>
+

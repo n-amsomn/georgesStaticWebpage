@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostsCards from '../../components/PostsCards.astro';
+
+export async function getStaticPaths() {
+  const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
+
+  return [
+    {params: {tag: "linux🐧"}, props: {posts: allPosts}},
+    {params: {tag: "homelab🖥️"}, props: {posts: allPosts}},
+    {params: {tag: "programming🧑‍💻"}, props: {posts: allPosts}},
+    {params: {tag: "blogging🗒️"}, props: {posts: allPosts}},
+  ];
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+const filteredPosts = posts.filter((post: any) => post.frontmatter.tags?.includes(tag));
+---
+
+<BaseLayout pageTitle={tag}>
+  <h1>Posts tagged with <span style="color: red; font-weight: bold;">[{tag}]</span>:</h1>
+  {filteredPosts.map((post: any) => <PostsCards url={post.url} title={post.frontmatter.title} description={post.frontmatter.description} pubDate={post.frontmatter.pubDate.toString().slice(0,10)}/>)}
+</BaseLayout>

@@ -1,0 +1,52 @@
+---
+
+const { page } = Astro.props;
+const pages = new Map([
+  ["/", "Welcome"],
+  ["/about/", "About"],
+  ["/posts/", "Posts"]
+]);
+let currentPath="";
+if(Astro.url.pathname.includes("tags")){
+  currentPath = "/posts/";
+} else if(Astro.url.pathname.includes("posts")){
+  currentPath="/posts/";
+} else {
+  currentPath=Astro.url.pathname;
+}
+---
+
+<header>
+  <nav>
+    {Array.from(pages, ([key, value]) => (
+      <a href={key} class={String(currentPath) === String(key) ? "current-page" : ""}><span>{value}</span></a>
+    ))}
+  </nav>
+</header>
+
+<style>
+  header {
+    background-color: #494a49;
+    color: #d6d8da;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    border: 0.1rem solid #494a49;
+    border-bottom: none;
+    
+  }
+
+  a {
+    text-decoration: none;
+    color: #d6d8da;
+    background-color: #494a49;
+    padding: 0.8rem;
+  }
+
+  a:hover {
+    background-color: #373837;
+  }
+
+  a.current-page {
+    background-color: #171717;
+  }
+</style>

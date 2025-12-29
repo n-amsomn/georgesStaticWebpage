@@ -1,0 +1,27 @@
+---
+const { frontmatter } = Astro.props;
+import BaseLayout from '../layouts/BaseLayout.astro';
+const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
+---
+
+<meta charset="utf-8" />
+<BaseLayout pageTitle={`/posts/${frontmatter.title}`}>
+    <p class="all-tags"></p>
+    {Array.isArray(frontmatter.tags) && frontmatter.tags.length > 0 ? (
+        <div class="tag-list">
+        {frontmatter.tags.map((tag: unknown) => (
+            <a href={`/tags/${tag}`} class="tags"><span>[ {tag} ]</span></a>
+        ))}
+            </div>
+        ):
+            <p class="tags">[ no tags ]</p>
+    }
+    <p>Written by {frontmatter.author}</p>
+    <p>Published on: {frontmatter.pubDate.toString().slice(0,10)}</p>
+    <p><em>{frontmatter.description}</em></p>
+    <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+
+    <slot />
+  </div>
+</BaseLayout>
+

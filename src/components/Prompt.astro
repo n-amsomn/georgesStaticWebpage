@@ -1,0 +1,35 @@
+---
+const {pageTitle, domain} = Astro.props;
+const userPrompt = `guest@${domain}:`;
+---
+<div class="wrapper-prompt">
+<span class= "userPrompt">{userPrompt}</span><span class="pageTitle">{pageTitle}</span><span>$</soan><span class="caret"></span>
+</div>
+
+<style>
+    .userPrompt {
+        color:#16C60C
+    }
+    .pageTitle {
+        color:#3B78FF
+    }
+
+    .wrapper-prompt {
+        font-size: 1.4rem;
+    }
+
+    
+    @media screen and (max-width: 540px) {
+        .wrapper-prompt{
+            font-size: 0.95rem;
+        }
+    }
+
+    @media screen and (min-width: 540px) and (max-width: 780px) {
+        .wrapper-prompt{
+            font-size: 1.7rem;
+        }
+    }
+
+
+</style>

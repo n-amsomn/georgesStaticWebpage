@@ -1,0 +1,103 @@
+---
+import '../styles/global.css';
+const { title, url, description, pubDate } = Astro.props;
+---
+<a href={url} class="post">
+    <div class="wrapper">
+        <div class="title">
+            <span>Title: {title}</span>
+            <span class="caret"></span>
+        </div>
+        <div class="pubDate">
+            <span class="label">Published on: </span>
+            <span class="date">{pubDate}</span>
+        </div>
+        <div class="description">
+            {description}
+        </div>
+    </div>
+</a>
+<style>
+.post {
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    
+}
+.wrapper {
+    border: 2px solid #262a36;              
+    background-color: #181a20;              
+    color: #fff;
+    padding: 20px 28px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px #0006;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.3s;
+    position: relative;
+    margin: 0.8rem;
+}
+
+.wrapper:hover,
+.wrapper:focus-within {
+    border-color: rgba(1,58,16,0.9);                  
+    box-shadow:
+      0 0 8px rgba(1,58,16,0.9), 
+      0 0 24px rgba(1,58,16,0.9) inset, 
+      0 2px 24px #111;
+    background-color: #16181d;
+}
+
+
+.title {
+    color: #50fa7b;
+    font-size: 1.2rem;
+    letter-spacing: 0.04em;
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+    display: flex; 
+    align-items: center;
+}
+.post-card .caret,
+.wrapper .caret {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+
+.post-card:hover .caret,
+.post-card:focus-within .caret,
+.wrapper:hover .caret,
+.wrapper:focus-within .caret {
+  opacity: 1;
+  pointer-events: all;
+}
+
+
+.pubDate {
+    color: #8be9fd;
+    font-size: 0.98rem;
+    margin-bottom: 0.5rem;
+}
+.pubDate .label {
+    color: #bbb;
+    font-style: italic;
+}
+.pubDate .date {
+    color: #f1fa8c; 
+    font-family: inherit;
+}
+
+
+.description {
+    color: #d6d6d6;
+    background: rgba(255,255,255,0.02);
+    font-size: 1rem;
+    border-radius: 3px;
+    padding: 0.4rem 0.7rem 0.4rem 0;
+    margin-top: 0.7rem;
+    transition: background 0.2s;
+}
+.wrapper:hover .description {
+    background: rgba(25, 249, 216, 0.04);
+}
+
+</style>
