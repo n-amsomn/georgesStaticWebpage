@@ -17,11 +17,12 @@ const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true })
             <p class="tags">[ no tags ]</p>
     }
     <div class="wrapper">
-        <p>Written by {frontmatter.author}</p>
-        <p>Published on: {frontmatter.pubDate.toString().slice(0,10)}</p>
-        <p><em>{frontmatter.description}</em></p>
+        <p>Written by <span class="author">{frontmatter.author}</span></p>
+        <p>Published on: <span class="pubDate">{frontmatter.pubDate.toString().slice(0,10)}</span></p>
+        <p><span class="description">{frontmatter.description}</span></p>
         <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
     </div>
+
     <slot />
   </div>
 </BaseLayout>
@@ -29,6 +30,16 @@ const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true })
 <style>
     .wrapper {
         border-bottom: 1px dashed  red;
+    }
+    .author{
+        color: #e5c07b;
+    }
+    .pubDate{
+        color: #e5c07b;
+    }
+    .description{
+        font-style: italic;
+        background-color: rgb(37, 37, 37);
     }
 </style>
 
