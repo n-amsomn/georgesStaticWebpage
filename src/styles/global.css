@@ -86,10 +86,6 @@ body {
   color: #e5c07b;
 }
 
-.all-tags::before{
-  content: "Tags:";
-}
-
 .tags {
   position: relative;
   color: rgb(248, 220, 192);
@@ -112,7 +108,7 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 3px;
+  height: 1px;
   background: #ff2222;
   transition: height 0.3s cubic-bezier(.77,0,.18,1), background 0.3s;
   z-index: 0; 

@@ -19,6 +19,5 @@ const filteredPosts = posts.filter((post: any) => post.frontmatter.tags?.include
 ---
 
 <BaseLayout pageTitle={tag}>
-  <h1>Posts tagged with <span style="color: red; font-weight: bold;">[{tag}]</span>:</h1>
   {filteredPosts.map((post: any) => <PostsCards url={post.url} title={post.frontmatter.title} description={post.frontmatter.description} pubDate={post.frontmatter.pubDate.toString().slice(0,10)}/>)}
 </BaseLayout>
