@@ -70,7 +70,7 @@
   font-display: swap;
 }
 html{
-  font-family: 'JetBrains Mono';
+  font-family: 'JetBrains Mono', monospace;
 }
 
 body {
