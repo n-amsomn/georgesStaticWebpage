@@ -12,7 +12,7 @@ const {domain} = Astro.props;
   </div>
   <section class="domain">
     {domain}
-    <span class="time"></span>
+    <span id="datetime"></span>
   </section>
 </footer>
 
@@ -43,7 +43,17 @@ const {domain} = Astro.props;
 </style>
 
 <script type="text/javascript">
-  let currentDate = `${new Date().toJSON().slice(11, 16)} ${new Date().toJSON().slice(0, 10)}`
-  document.getElementsByClassName("time").innerHTML = (currentDate); 
+//   let currentDate = `${new Date().toJSON().slice(11, 16)} ${new Date().toJSON().slice(0, 10)}`
+//   document.querySelector('#datetime').textContent = currentDate;
+// setInterval(updateDateTime, 1000);
+
+let clock = document.getElementById('datetime');
+currentDate = `${new Date().toJSON().slice(11, 16)} ${new Date().toJSON().slice(0, 10)}`
+clock.innerHTML = currentDate;
+
+setInterval(() => {
+  currentDate = `${new Date().toJSON().slice(11, 16)} ${new Date().toJSON().slice(0, 10)}`
+  clock.innerHTML = currentDate;
+}, 1000)
 </script>
 
