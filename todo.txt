@@ -1,0 +1,1 @@
+- Move the social links to the center of the footer for mobile devices

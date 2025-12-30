@@ -5,9 +5,11 @@ const {domain} = Astro.props;
 
 
 <footer>
-  <Social platform="github" username="n-amsomn" />
-  <Social platform="linkedin" username="in/george-bolea" />
-  <Social platform="youtube" username="@sergheipaparashova9893" />
+  <div class="socials">
+    <Social platform="github" username="n-amsomn" />
+    <Social platform="linkedin" username="in/george-bolea" />
+    <Social platform="youtube" username="@sergheipaparashova9893" />
+  </div>
   <section class="domain">
     {domain}
     <span class="time"></span>
@@ -29,7 +31,10 @@ const {domain} = Astro.props;
 
   @media screen and (max-width: 540px) {
     .domain {
-      content-visibility: hidden;
+      display: none;
+    }
+    .socials {
+      margin: auto;
     }
 }
 
