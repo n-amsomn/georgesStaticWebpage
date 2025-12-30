@@ -6,12 +6,12 @@ import asciiHobbies2 from "../images/asciiHobbies2.png";
 ---
 <div class="wrapper">
     <div class="wrapper-name">
-        <Image src={asciiName} alt="A bird." class="asciiName"/>
+        <Image src={asciiName} alt="My name" class="asciiName" loading="lazy"/>
     </div>
 
     <div class="wrapper-hobbies">
-        <Image src={asciiHobbies1} alt="A bird." class="asciiHobbies1"/>
-        <Image src={asciiHobbies2} alt="A bird." class="asciiHobbies2"/>
+        <Image src={asciiHobbies1} alt="Hobbies part 1" class="asciiHobbies1" loading="lazy" />
+        <Image src={asciiHobbies2} alt="Hobbies part 2" class="asciiHobbies2" loading="lazy" />
     </div>
 </div>
 
@@ -24,7 +24,7 @@ import asciiHobbies2 from "../images/asciiHobbies2.png";
 
     .asciiName{
         width: 80%;
-        height: 12%;
+        width: 600px;
     }
     .wrapper-hobbies{
         margin-bottom: 1rem;
@@ -33,21 +33,25 @@ import asciiHobbies2 from "../images/asciiHobbies2.png";
     }
     .asciiHobbies1 {
         width: 50%;
-        height: 100%;     
+        height: 70px;     
     }
     .asciiHobbies2 {
         width: 47%;
-        height: 1%;     
+        height: 70px;     
     }
 
     @media screen and (max-width: 540px) {
+        .asciiName{
+            width: 80%;
+            height: 60px;
+        }
         .asciiHobbies1 {
             width: 90%;
-            height: 100%;     
+            height: 33px;    
         }
         .asciiHobbies2 {
             width: 80%;
-            height: 1%;
+            height: 30px;    
             padding-left: 1%;     
         }
     }
