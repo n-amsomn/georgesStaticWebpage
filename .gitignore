@@ -26,5 +26,3 @@ pnpm-debug.log*
 # vscode folder
 .vscode/
 
-# todo file
-.todo.txt

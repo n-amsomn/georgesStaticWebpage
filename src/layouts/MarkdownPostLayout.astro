@@ -22,7 +22,6 @@ const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true })
         <p><span class="description">{frontmatter.description}</span></p>
         <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
     </div>
-
     <slot />
   </div>
 </BaseLayout>
