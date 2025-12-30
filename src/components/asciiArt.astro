@@ -1,100 +1,56 @@
-<div class="wrapper-name">
-<pre class="asciiName">
- ▄▄▄▄▄▄▄                                          
-███▀▀▀▀▀                          ▀▀              
-███       ▄█▀█▄ ▄███▄ ████▄ ▄████ ██   ▀▀█▄ ████▄ 
-███  ███▀ ██▄█▀ ██ ██ ██ ▀▀ ██ ██ ██  ▄█▀██ ██ ██ 
-▀██████▀  ▀█▄▄▄ ▀███▀ ██    ▀████ ██▄ ▀█▄██ ██ ██ 
-                               ██
-                             ▀▀▀ 
-</pre >
-<pre class="asciiName">
-▄▄▄▄▄▄▄         ▄▄             
-███▀▀███▄       ██             
-███▄▄███▀ ▄███▄ ██ ▄█▀█▄  ▀▀█▄ 
-███  ███▄ ██ ██ ██ ██▄█▀ ▄█▀██ 
-████████▀ ▀███▀ ██ ▀█▄▄▄ ▀█▄██ 
+---
+import { Image } from 'astro:assets';
+import asciiName from "../images/asciiName.png";
+import asciiHobbies1 from "../images/asciiHobbies1.png";
+import asciiHobbies2 from "../images/asciiHobbies2.png";
+---
+<div class="wrapper">
+    <div class="wrapper-name">
+        <Image src={asciiName} alt="A bird." class="asciiName"/>
+    </div>
 
-                   
-</pre>
-</div>
-
-<div class="wrapper-hobbies">
-    <pre class="asciiHobbies">
-   ▄                                 
-██ ▀ ▄▄   ▄▄   ▄▄ ▄▄  ▄▄ ▄▄▄▄▄▄ ▄▄▄  
-██   ██▀▄▀██   ██ ███▄██   ██  ██▀██ 
-██   ██   ██   ██ ██ ▀██   ██  ▀███▀ 
-
-</pre>
-<pre class="asciiHobbies"> 
-▄▄ ▄▄  ▄▄▄  ▄▄   ▄▄ ▄▄▄▄▄ ▄▄     ▄▄▄  ▄▄▄▄  ▄▄▄▄  ▄▄ ▄▄  ▄▄  ▄▄▄▄   
-██▄██ ██▀██ ██▀▄▀██ ██▄▄  ██    ██▀██ ██▄██ ██▄██ ██ ███▄██ ██ ▄▄   
-██ ██ ▀███▀ ██   ██ ██▄▄▄ ██▄▄▄ ██▀██ ██▄█▀ ██▄█▀ ██ ██ ▀██ ▀███▀  ▄
-                                                                  ▀  
-</pre>
-<pre class="asciiHobbies">
-▄▄    ▄▄ ▄▄  ▄▄ ▄▄ ▄▄ ▄▄ ▄▄   
-██    ██ ███▄██ ██ ██ ▀█▄█▀   
-██▄▄▄ ██ ██ ▀██ ▀███▀ ██ ██  ▄
-                            ▀ 
-</pre>
-<pre class="asciiHobbies">
-▄▄▄▄  ▄▄▄▄▄ ▄▄ ▄▄  ▄▄▄  ▄▄▄▄   ▄▄▄▄ 
-██▀██ ██▄▄  ██▄██ ██▀██ ██▄█▀ ███▄▄ 
-████▀ ██▄▄▄  ▀█▀  ▀███▀ ██    ▄▄██▀ 
-
-</pre>
-<pre class="asciiHobbies">
- ▄▄▄  ▄▄  ▄▄ ▄▄▄▄    ██    ▄▄▄▄   ▄▄▄  
-██▀██ ███▄██ ██▀██   ██    ██▀██ ██▀██ 
-██▀██ ██ ▀██ ████▀   ██    ████▀ ▀███▀ 
-
-</pre>
-<pre class="asciiHobbies">
- ▄▄▄  ▄▄   ▄▄  ▄▄▄ ▄▄▄▄▄▄ ▄▄▄▄▄ ▄▄ ▄▄ ▄▄▄▄  
-██▀██ ██▀▄▀██ ██▀██  ██   ██▄▄  ██ ██ ██▄█▄ 
-██▀██ ██   ██ ██▀██  ██   ██▄▄▄ ▀███▀ ██ ██  
-
-</pre>
-<pre class="asciiHobbies">
-▄▄▄▄  ▄▄▄▄   ▄▄▄   ▄▄▄▄ ▄▄▄▄   ▄▄▄  ▄▄   ▄▄ ▄▄   ▄▄ ▄▄ ▄▄  ▄▄  ▄▄▄▄ 
-██▄█▀ ██▄█▄ ██▀██ ██ ▄▄ ██▄█▄ ██▀██ ██▀▄▀██ ██▀▄▀██ ██ ███▄██ ██ ▄▄ 
-██    ██ ██ ▀███▀ ▀███▀ ██ ██ ██▀██ ██   ██ ██   ██ ██ ██ ▀██ ▀███▀ 
-
-</pre>
-
+    <div class="wrapper-hobbies">
+        <Image src={asciiHobbies1} alt="A bird." class="asciiHobbies1"/>
+        <Image src={asciiHobbies2} alt="A bird." class="asciiHobbies2"/>
+    </div>
 </div>
 
 <style>
     .wrapper-name {
         margin-bottom: 1rem;
-    }
-    .asciiName {
         display: inline-block;
-        font-size: 1rem;
+        padding: 0;
+    }
+
+    .asciiName{
+        width: 80%;
+        height: 12%;
     }
     .wrapper-hobbies{
-
-    }
-    .asciiHobbies {
+        margin-bottom: 1rem;
         display: inline-block;
-        font-size: 0.4rem;
+        padding: 0;
+    }
+    .asciiHobbies1 {
+        width: 50%;
+        height: 100%;     
+    }
+    .asciiHobbies2 {
+        width: 47%;
+        height: 1%;     
+    }
+
+    @media screen and (max-width: 540px) {
+        .asciiHobbies1 {
+            width: 90%;
+            height: 100%;     
+        }
+        .asciiHobbies2 {
+            width: 80%;
+            height: 1%;
+            padding-left: 1%;     
+        }
     }
 
 
-@media screen and (max-width: 540px) {
-    .asciiName {
-        font-size: 0.45rem;
-    }
-    .asciiHobbies {
-        font-size: 0.2rem
-    }
-}
-
-@media screen and (min-width: 540px) and (max-width: 780px) {
-    .asciiName {
-        font-size: 0.65rem;
-    }
-}
 </style>
