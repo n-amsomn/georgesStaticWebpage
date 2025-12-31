@@ -154,13 +154,7 @@ h2 {
   color: #9B961E;
 }
 
-h2::before{
-  content: ">";
-}
 
-h2::after{
-  content: "<"
-}
 
 
 h3 {
@@ -168,46 +162,24 @@ h3 {
   color: #6B9E6A;
 }
 
-h3::before{
-  content: ">>";
-}
-
-h3:after{
-  content:"<<";
-}
 
 h4{
   font-size: 1.4rem;
   color: #AC648E;
 }
-h4::before{
-  content: ">>>";
-}
-h4::after{
-  content: "<<<";
-}
+
 
 h5 {
   font-size: 1.2rem;
   color: #6a849e;
 }
-h5::before{
-  content: ">>>>";
-}
-h5::after{
-  content: "<<<<";
-}
+
 
 h6 {
   font-size: 1.1rem;
   color: #9e6a6a;
 }
-h6::before{
-  content: ">>>>>";
-}
-h6::after{
-  content: "<<<<<";
-}
+
 
 
 
