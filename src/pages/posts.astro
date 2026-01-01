@@ -9,11 +9,11 @@ const tags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat
 
 ---
 <BaseLayout pageTitle="/posts">
-  <h1>Tags: </h1>
+
   {tags.map((tag) => (
     <div class="tag-list"><a class="tags" href={`/tags/${tag}`}><span>[{tag}]</span></a></div>
   ))}
-  <h1>My Posts: </h1>
+
   {allPosts.map((post: any) => <PostsCards url={post.url} title={post.frontmatter.title} description={post.frontmatter.description} pubDate={post.frontmatter.pubDate.toString().slice(0,10)}/>)}
   <div>
 
@@ -23,10 +23,6 @@ const tags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat
 <style>
   .tag-list {
     display: inline-block;
-  }
-
-  h1{
-    color: #e5c07b;
   }
 
 </style>
