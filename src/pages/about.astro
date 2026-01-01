@@ -1,59 +1,71 @@
 ---
+import { Image } from 'astro:assets';
+
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+import catto from "../images/catto.jpeg";
 const pageTitle = "/about";
 ---
 <BaseLayout pageTitle={pageTitle}>
-  <h1>Hi, I'm George!</h1>
-  <img src="" alt="placeholder">
-  <h2>What do I do for a living?</h3>
-  <p>I'm a <b>tech support</b> engineer, currently working for <b>Oracle</b>!</p>
-  <h3>Stuff I like</h3>
-  <p>My interests are right here, in no particular order:</p>
-  <ul>
-    <li>Working on my homelab, which I use for running a lot of apps, <b>Virtualization </b>with <b>Proxmox</b>, <b>Containerization</b> with <b>Docker</b>, monitoring with <b>Grafana</b>
-    and some other interesting stuff which I love talking about!
-    </li>
-    <li>
-      Learning <b>DevOps</b>, I'm currently working on my <b>CKA</b> cert, but I also integrate stuff like <b>pipelines</b>, <b>git repos</b> and other self hosted tools to <b>monitor</b> my homelab.
-    </li>
-    <li>
-      Reading, from <b>history</b> books, to <b>fantasy</b>, to <b>mangas</b> and everything else!
-    </li>
-    <li>
-      I like <b>coding</b> stuff to make my life easier, sometimes <b>bash</b> scripts, other times <b>python</b> GUIs or <b>web dev</b> stuff. I also love messing with <b>config files</b> to make my suff fancy or custom!
-    </li>
-    <li>
-      <b>Linux</b>, be it <b>Desktop</b>, or a <b>server VM</b>. I have Linux on my daily machine which I use for <b>coding</b>, <b>gaming</b> or even simple tasks as sending emails.
-    </li>
-    <li>
-      I also like <b>gaming</b> on my aforementioned <b>Linux Desktop</b>. I play a long list of stuff, mainly games with a <b>story</b> or <b>mil-sims</b>. I dropped competitive gaming a while ago.
-    </li>
-  </ul>
-  <h4>PC specs</h4>
-  <ul>
-    <li>
-      <b>CPU</b>: AMD Ryzen 7 7700
-    </li>
-    <li>
-      <b>GPU</b>: AMD Radeon RX 9070, 16GB
-    </li>
-    <li>
-      <b>Motherboad</b>: Gigabyte B650 Eagle
-    </li>
-    <li>
-      <b>RAM</b>: 2x16 GB 6000Mz DDR5
-    </li>
-    <li>
-      <b>Case</b>: Fractal Design Focus 2 Black
-    </li>
-  </ul>
-  <h4>Contact me</h4>
-  <p>Click the <b>links</b> below if you want to <b>get in touch!</b></p>
+  <div class="wrapper">
+    <h1>Hi, I'm George!</h1>
+    <Image src={catto} alt="Just a cat" class="catto" loading="lazy"/>
+    <p>That's obviously not me, if you wanna see my face just open the <b>LinkedIn</b> link at the bottom.</p>
+    <h2>What do I do for a living?</h3>
+    <p>I'm a <b>tech support</b> engineer, currently working for <b>Oracle</b>!</p>
+    <h3>Stuff I like</h3>
+    <p>My interests are right here, in no particular order:</p>
+    <ul>
+      <li>Working on my homelab, which I use for running a lot of apps, <b>Virtualization </b>with <b>Proxmox</b>, <b>Containerization</b> with <b>Docker</b>, monitoring with <b>Grafana</b>
+      and some other interesting stuff which I love talking about!
+      </li>
+      <li>
+        Learning <b>DevOps</b>, I'm currently working on my <b>CKA</b> cert, but I also integrate stuff like <b>pipelines</b>, <b>git repos</b> and other self hosted tools to <b>monitor</b> my homelab.
+      </li>
+      <li>
+        Reading, from <b>history</b> books, to <b>fantasy</b>, to <b>mangas</b> and everything else!
+      </li>
+      <li>
+        I like <b>coding</b> stuff to make my life easier, sometimes <b>bash</b> scripts, other times <b>python</b> GUIs or <b>web dev</b> stuff. I also love messing with <b>config files</b> to make my suff fancy or custom!
+      </li>
+      <li>
+        <b>Linux</b>, be it <b>Desktop</b>, or a <b>server VM</b>. I have Linux on my daily machine which I use for <b>coding</b>, <b>gaming</b> or even simple tasks as sending emails.
+      </li>
+      <li>
+        I also like <b>gaming</b> on my aforementioned <b>Linux Desktop</b>. I play a long list of stuff, mainly games with a <b>story</b> or <b>mil-sims</b>. I dropped competitive gaming a while ago.
+      </li>
+    </ul>
+    <h4>PC specs</h4>
+    <ul>
+      <li>
+        <b>CPU</b>: AMD Ryzen 7 7700
+      </li>
+      <li>
+        <b>GPU</b>: AMD Radeon RX 9070, 16GB
+      </li>
+      <li>
+        <b>Motherboad</b>: Gigabyte B650 Eagle
+      </li>
+      <li>
+        <b>RAM</b>: 2x16 GB 6000Mz DDR5
+      </li>
+      <li>
+        <b>Case</b>: Fractal Design Focus 2 Black
+      </li>
+    </ul>
+    <h4>Contact me</h4>
+    <p>Click the <b>links</b> below if you want to <b>get in touch!</b></p>
+  </div>
 </BaseLayout>
 
 <style>
   li{
-
     padding: 0.2rem;
+  }
+
+  .catto {
+    width: auto;
+    height: 20rem;
+    aspect-ratio: 3/4;
   }
 </style>
