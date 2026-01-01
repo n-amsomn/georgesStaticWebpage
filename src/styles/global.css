@@ -74,7 +74,10 @@ html{
 }
 
 body {
-  background-color: rgb(31, 29, 69);
+  background-image: radial-gradient(
+    rgba(0, 150, 0, 0.75), black 120%
+  );
+  height: 100vh;
   color: rgb(248, 220, 192);
   margin: 4%;
   font-size: 1rem; 
@@ -145,13 +148,13 @@ body {
 
 h1 {
   font-size: 2rem;
-  color: #e5c07b;
+  color: #C23127;
 }
 
 
 h2 {
   font-size: 1.8rem;
-  color: #9B961E;
+  color: #2AA889;
 }
 
 
@@ -159,27 +162,30 @@ h2 {
 
 h3 {
   font-size: 1.6rem;
-  color: #6B9E6A;
+  color: #EDB443;
 }
 
 
 h4{
   font-size: 1.4rem;
-  color: #AC648E;
+  color: #237189;
 }
 
 
 h5 {
   font-size: 1.2rem;
-  color: #6a849e;
+  color: #4E5166;
 }
 
 
 h6 {
   font-size: 1.1rem;
-  color: #9e6a6a;
+  color: #33859E;
 }
 
+b{
+  color: #EDB443;
+}
 
 
 

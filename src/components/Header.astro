@@ -1,6 +1,6 @@
 ---
 
-const { page } = Astro.props;
+const {icon} = Astro.props;
 const pages = new Map([
   ["/", "Welcome"],
   ["/about/", "About"],
@@ -48,5 +48,10 @@ if(Astro.url.pathname.includes("tags")){
 
   a.current-page {
     background-color: #171717;
+  }
+
+  a.current-page::before{
+    font-family: FontAwesome;
+    content: "\f120 ";
   }
 </style>
