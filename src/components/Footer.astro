@@ -1,5 +1,6 @@
 ---
 import Social from './Social.astro';
+import Email from './Email.astro';
 const {domain} = Astro.props;
 ---
 
@@ -9,6 +10,7 @@ const {domain} = Astro.props;
     <Social platform="github" username="n-amsomn" icon="fa fa-github"/>
     <Social platform="linkedin" username="in/george-bolea" icon="fa fa-linkedin-square"/>
     <Social platform="youtube" username="@sergheipaparashova9893" icon="fa fa-youtube-play"/>
+    <Email at="gmail.com" username="georgian.bolea" icon="fa fa-envelope" />
   </div>
   <section class="domain">
     {domain}

@@ -1,0 +1,54 @@
+---
+const { at, username, icon } = Astro.props;
+---
+<a href={`mailto:${username}@${at}`} class="footer-link">[email <i class=`${icon}` aria-hidden="true"></i>]</a>
+
+<style>
+  .footer-link {
+    position: relative;
+    color: #222;
+    background: none;
+    text-decoration: none;
+    border: none;
+    transition: color 0.15s;
+    padding: 0 0.2em;
+    overflow: hidden;
+  }
+  .footer-link:hover, .footer-link:focus {
+    color: red;
+  }
+
+  .footer-link::before {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #4e4e4e;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.28s cubic-bezier(.68,-0.55,.27,1.55);
+  }
+  .footer-link:hover::before, .footer-link:focus::before {
+    transform: scaleX(1);
+  }
+
+  .footer-link::after {
+    content: '';
+    display: none;
+  }
+
+  @media screen and (max-width: 540px) {
+      .footer-link{
+          font-size: 0.9rem;
+          padding: 0;
+      }
+  }
+
+  @media screen and (min-width: 540px) and (max-width: 780px) {
+      .footer-link{
+          font-size: 1rem;
+      }
+  }
+
+</style>
