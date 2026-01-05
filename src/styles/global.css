@@ -187,6 +187,10 @@ b{
   color: #e9a928;
 }
 
+strong{
+  color: #e9a928;
+}
+
 
 
 @media screen and (max-width: 540px) {
