@@ -17,9 +17,20 @@ const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true })
             <p class="tags">[ no tags ]</p>
     }
     <div class="wrapper">
-        <p>Written by <span class="author">{frontmatter.author}</span></p>
-        <p>Published on: <span class="pubDate">{frontmatter.pubDate.toString().slice(0,10)}</span></p>
-        <p><span class="description">{frontmatter.description}</span></p>
+        <div class="title">
+            <span>{frontmatter.title}</span>
+        </div>
+        <div class="pubDate">
+            <span class="label">Published on: </span>
+            <span class="date">{frontmatter.pubDate}</span>
+        </div>
+        <div class="writtenBy">
+            <span class="label">Written by: </span>
+            <span class="author">{frontmatter.author}</span>
+        </div>
+        <div class="description">
+            {frontmatter.description}
+        </div>
         <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
     </div>
     <slot />
@@ -27,25 +38,77 @@ const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true })
 </BaseLayout>
 
 <style>
-    .wrapper {
-        border: 2px solid #262a36;              
-        background-color: #181a20;              
-        color: #fff;
-        padding: 20px 28px;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px #0006;
-        transition: border-color 0.2s, box-shadow 0.2s, background 0.3s;
-        position: relative;
-    }
-    .author{
-        color: #e5c07b;
-    }
-    .pubDate{
-        color: #e5c07b;
-    }
-    .description{
-        font-style: italic;
-        background-color: rgb(37, 37, 37);
-    }
+.wrapper {
+    border: 2px solid #262a36;              
+    background-color: #181a20;              
+    color: #fff;
+    padding: 20px 28px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px #0006;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.3s;
+    position: relative;
+    margin: 0.8rem;
+}
+
+.wrapper:hover,
+.wrapper:focus-within {
+    border-color: rgba(1,58,16,0.9);                  
+    box-shadow:
+      0 0 8px rgba(1,58,16,0.9), 
+      0 0 24px rgba(1,58,16,0.9) inset, 
+      0 2px 24px #111;
+    background-color: #16181d;
+}
+
+
+.title {
+    color: #50fa7b;
+    font-size: 1.2rem;
+    letter-spacing: 0.04em;
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+    display: flex; 
+    align-items: center;
+}
+.writtenBy {
+    color: #8be9fd;
+    font-size: 0.98rem;
+    margin-bottom: 0.5rem;
+}
+.writtenBy .label {
+    color: #bbb;
+    font-style: italic;
+}
+.writtenBy .date {
+    color: #f1fa8c; 
+    font-family: inherit;
+}
+
+.pubDate {
+    color: #8be9fd;
+    font-size: 0.98rem;
+    margin-bottom: 0.5rem;
+}
+.pubDate .label {
+    color: #bbb;
+    font-style: italic;
+}
+.pubDate .date {
+    color: #f1fa8c; 
+    font-family: inherit;
+}
+
+
+.description {
+    color: #d6d6d6;
+    background: rgba(255,255,255,0.02);
+    font-size: 1rem;
+    border-radius: 3px;
+
+    transition: background 0.2s;
+}
+.wrapper:hover .description {
+    background: rgba(25, 249, 216, 0.04);
+}
 </style>
 

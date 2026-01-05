@@ -1,16 +1,20 @@
 ---
 import '../styles/global.css';
-const { title, url, description, pubDate } = Astro.props;
+const { title, url, description, pubDate, author } = Astro.props;
 ---
 <a href={url} class="post">
     <div class="wrapper">
         <div class="title">
-            <span>Title: {title}</span>
+            <span>{title}</span>
             <span class="caret"></span>
         </div>
         <div class="pubDate">
             <span class="label">Published on: </span>
             <span class="date">{pubDate}</span>
+        </div>
+        <div class="writtenBy">
+            <span class="label">Written by: </span>
+            <span class="author">{author}</span>
         </div>
         <div class="description">
             {description}
@@ -57,7 +61,7 @@ const { title, url, description, pubDate } = Astro.props;
 }
 .post-card .caret,
 .wrapper .caret {
-    padding-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s;
@@ -72,6 +76,20 @@ const { title, url, description, pubDate } = Astro.props;
   pointer-events: all;
 }
 
+
+.writtenBy {
+    color: #8be9fd;
+    font-size: 0.98rem;
+    margin-bottom: 0.5rem;
+}
+.writtenBy .label {
+    color: #bbb;
+    font-style: italic;
+}
+.writtenBy .date {
+    color: #f1fa8c; 
+    font-family: inherit;
+}
 
 .pubDate {
     color: #8be9fd;
